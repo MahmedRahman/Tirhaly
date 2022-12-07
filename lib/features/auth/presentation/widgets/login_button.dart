@@ -11,29 +11,23 @@ Widget LoginButton({
 }) =>
     Hero(
       tag: "LoginButton",
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 8.w,
-          vertical: 8.h,
+      child: Material(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7.r),
         ),
-        child: Material(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7.r),
-          ),
-          color: ButtonBackGroundColor,
-          clipBehavior: Clip.antiAlias,
-          child: MaterialButton(
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            onPressed: onPressed,
-            minWidth: Get.width,
-            height: 40.h,
-            child: Text(
-              title,
-              style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
-                    color: Colors.white,
-                    fontSize: 15.sp,
-                  ),
-            ),
+        color: ButtonBackGroundColor,
+        clipBehavior: Clip.antiAlias,
+        child: MaterialButton(
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          onPressed: onPressed,
+          minWidth: Get.width,
+          height: 35.3.h,
+          child: Text(
+            title,
+            style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
+                  color: Colors.white,
+                  fontSize: 15.sp,
+                ),
           ),
         ),
       ),
