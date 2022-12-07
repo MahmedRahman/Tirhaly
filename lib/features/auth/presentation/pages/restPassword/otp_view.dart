@@ -1,155 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/rest_passeord_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
+import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_button.dart';
+import 'package:thrhaly/features/auth/presentation/widgets/pin_code_field.dart';
 // import this
 
 class OtpView extends GetView {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  String codeValue = "";
+  bool hasError = false;
+
+  @override
+  void codeUpdated() {
+    // setState(() {
+    //   codeValue = code!;
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Form(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          key: _formKey,
-          child: ListView(
-            children: [
-              SpacerH10(),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    backButton(onPressed: () {
-                      Get.back();
-                    }),
-                    FormTitle(
-                      firstText: "كود",
-                      scandText: "التأكيد",
-                    ),
-                    SpacerH5(),
-                    Text(
-                      "لقد أرسلنا لك كود التأكيد على الإيميل",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300,
-                        color: Color(AppConst.KColorBlue),
-                      ),
-                    ),
-                    SpacerH5(),
-                    Text(
-                      "Dina@Tirhaly.com.sa",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300,
-                        color: Color(AppConst.KColorBlue),
-                      ),
-                    ),
-                    SpacerH10(),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SpacerW5(),
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SpacerW5(),
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SpacerW5(),
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SpacerW5(),
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SpacerW5(),
-                        Expanded(
-                          child: MyTextFormFieldNumber(
-                            tag: "email",
-                            validator: (value) {
-                              if (value!.isEmpty == true || value == "") {
-                                return "حقل مطلوب";
-                              }
-                              return null;
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                    SpacerH10(),
-                  ],
+    return BaseAuthPage(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          elevation: 0,
+          actions: [
+            backButton(
+              onPressed: () {
+                Get.back();
+              },
+            )
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 73.h,
+            ),
+            FormTitle(
+              firstText: "كود",
+              scandText: "التأكيد",
+            ),
+            SpacerH12(),
+            Text(
+              "لقد أرسلنا لك كود التأكيد على الإيميل",
+              style: Theme.of(Get.context!).textTheme.headlineSmall,
+            ),
+            Text(
+              "Dina@Tirhaly.com.sa",
+              style: Theme.of(Get.context!).textTheme.headlineSmall,
+            ),
+            SpacerH21(),
+            Center(
+              child: Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                key: _formKey,
+                child: PinCodeField(
+                  formKey: _formKey,
+                  validator: (value) {
+                    if (value!.length == 6) return '';
+                    return 'يرجي ادخال الكود بشكل صحيح لا يقل عن ٦ ارقام';
+                  },
+                  withTitle: false,
+                  onChanged: (value) {},
+                  onCompleted: (_) => {},
                 ),
               ),
-              MyTextButton(text: "إعادة إرسال", onPressed: () {}),
-              LoginButton(
-                ButtonBackGroundColor: Color(AppConst.KColorBlue),
-                title: "تأكيد",
-                onPressed: () {
-                  //_formKey.currentState!.validate();
+            ),
+            MyTextButton(text: "إعادة إرسال", onPressed: () {}),
+            SpacerH17(),
+            LoginButton(
+              ButtonBackGroundColor: Color(AppConst.KColorBlue),
+              title: "تأكيد",
+              onPressed: () {
+                // if (_formKey.currentState!.validate()) {
+                //   _formKey.currentState!.save();
                   Get.to(() => ResetPasswordView());
-                },
-              ),
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+                // }
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+          ],
+        ));
   }
 }
 
@@ -166,36 +108,24 @@ MyTextFormFieldNumber({
         filled: true,
         prefixIconColor: Color(0xff515151),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: Color(0xff8D8D8D),
-            width: 2.0,
-          ),
+          borderRadius: BorderRadius.circular(7),
+          borderSide: BorderSide.none,
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: Color(0xffF16623),
-            width: 2.0,
-          ),
+          borderRadius: BorderRadius.circular(7),
+          borderSide: BorderSide.none,
         ),
         errorStyle: TextStyle(
           color: Color(0xffF16623),
           fontWeight: FontWeight.w600,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: Color(AppConst.KColorBlue),
-            width: 2.0,
-          ),
+          borderRadius: BorderRadius.circular(7),
+          borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: Color(0xff8D8D8D),
-            width: 2.0,
-          ),
+          borderRadius: BorderRadius.circular(7),
+          borderSide: BorderSide.none,
         ),
       ),
     );

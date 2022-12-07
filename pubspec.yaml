@@ -14,6 +14,7 @@ dependencies:
   flutter_screenutil:
   animate_do: ^3.0.2
   page_transition: ^2.0.9
+  pin_code_fields: ^7.4.0
 
   
   flutter: 
