@@ -119,7 +119,7 @@ class SignUpView extends GetView {
                     onPressed: () {},
                   ),
                   MySocialButton(
-                    iconAsset: AppImagePath.icon_googel,
+                    iconAsset: AppImagePath.icon_google,
                     onPressed: () {},
                   ),
                 ],
