@@ -121,7 +121,7 @@ class SignUpView extends GetView {
             MyTwoTextButton(
               onPressed: () {
                 Get.to(
-                  () => SignUpView(),
+                  () => SignInView(),
                 );
               },
               firstText: "Don\'t have an account?",
