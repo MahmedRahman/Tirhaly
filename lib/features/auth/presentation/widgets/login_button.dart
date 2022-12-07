@@ -13,7 +13,7 @@ Widget LoginButton({
       tag: "LoginButton",
       child: Material(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(7.r),
+          borderRadius: BorderRadius.circular(3.65.r),
         ),
         color: ButtonBackGroundColor,
         clipBehavior: Clip.antiAlias,
@@ -21,7 +21,7 @@ Widget LoginButton({
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: onPressed,
           minWidth: Get.width,
-          height: 35.3.h,
+          height: 31.97.h,
           child: Text(
             title,
             style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
