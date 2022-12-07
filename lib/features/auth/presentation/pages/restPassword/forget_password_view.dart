@@ -31,16 +31,12 @@ class ForgetPasswordView extends GetView {
               firstText: "نسيت",
               scandText: "كلمة المرور؟",
             ),
-            SpacerH10(),
+            SpacerH12(),
             Text(
-              "الرجاء كتابة البريد الإلكتروني الخاص بك أدناه \n للحصول على كود التأكيد",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
-                color: Color(AppConst.KColorBlue),
-              ),
+              "الرجاء كتابة البريد الإلكتروني الخاص بك أدناه\nللحصول على كود التأكيد",
+              style: Theme.of(Get.context!).textTheme.headlineSmall,
             ),
-            SpacerH15(),
+            SpacerH19(),
             FadeInUp(
               from: 30,
               duration: const Duration(milliseconds: 500),
@@ -58,7 +54,7 @@ class ForgetPasswordView extends GetView {
                       return null;
                     },
                   ),
-                  SpacerH15(),
+                  SpacerH21(),
                   LoginButton(
                     ButtonBackGroundColor: Color(AppConst.KColorBlue),
                     title: "إرسال",
