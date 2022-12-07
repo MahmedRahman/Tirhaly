@@ -22,9 +22,11 @@ class ForgetPasswordView extends GetView {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
         actions: [
-          backButton(onPressed: () {
-            Get.back();
-          })
+          backButton(
+            onPressed: () {
+              Get.back();
+            },
+          )
         ],
       ),
       child: Form(
