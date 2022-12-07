@@ -9,7 +9,7 @@ MyTextButton({
   return GestureDetector(
     onTap: onPressed,
     child: Text(
-      "نسيت كلمة المرور؟",
+      text ?? "نسيت كلمة المرور؟",
       style: Theme.of(Get.context!)
           .textTheme
           .headlineSmall!
