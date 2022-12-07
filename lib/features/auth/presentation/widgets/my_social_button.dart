@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:thrhaly/core/const.dart';
 
@@ -8,14 +8,13 @@ MySocialButton({
   required void Function()? onPressed,
 }) {
   return Material(
-    child: MaterialButton(
-      minWidth: 35,
-      height: 35,
-      onPressed: () {},
+    child: InkWell(
+      onTap: () {},
       child: Container(
-        width: 35,
-        height: 35,
+        width: 35.w,
+        height: 35.h,
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.r),
           border: Border.all(
             color: Color(
               AppConst.KColorBlue,
@@ -25,7 +24,7 @@ MySocialButton({
         ),
         child: Padding(
           padding: const EdgeInsets.all(
-            8.0,
+            7.0,
           ),
           child: SvgPicture.asset(iconAsset),
         ),
