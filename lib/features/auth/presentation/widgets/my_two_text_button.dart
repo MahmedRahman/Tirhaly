@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
 
 MyTwoTextButton({
@@ -7,18 +8,17 @@ MyTwoTextButton({
   required String firstText,
   required String scandText,
 }) {
-  return MaterialButton(
-    onPressed: onPressed,
+  return InkWell(
+    onTap: onPressed,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           firstText,
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w300,
-            color: Color(AppConst.KColorBlue),
-          ),
+          style: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+              color: Color(AppConst.KColorBlack),
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w300),
         ),
         SizedBox(
           width: 5,
@@ -35,5 +35,3 @@ MyTwoTextButton({
     ),
   );
 }
-
-
