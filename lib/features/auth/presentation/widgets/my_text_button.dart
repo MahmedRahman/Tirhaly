@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 MyTextButton({
   required String? text,
   required void Function()? onPressed,
 }) {
-  return MaterialButton(
-    onPressed: onPressed,
+  return GestureDetector(
+    onTap: onPressed,
     child: Text(
       "نسيت كلمة المرور؟",
-      style: TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.w300,
-        color: Color(0xff8D8D8D),
-      ),
+      style: Theme.of(Get.context!)
+          .textTheme
+          .headlineSmall!
+          .copyWith(fontSize: 13.sp, fontStyle: FontStyle.italic),
     ),
   );
 }
