@@ -32,64 +32,60 @@ class SignInView extends GetView {
                 SizedBox(
                   height: 73.h,
                 ),
-                Column(
+                FormTitle(
+                  firstText: "registration".tr,
+                  scandText: "registration_login".tr,
+                ),
+                SpacerH17(),
+                MyTextFormField(
+                  tag: "username",
+                  labelText: "اسم المستخدم",
+                  hintText: "ادخل اسم المستخدم",
+                  AssetImageIcon: "assets/images/icon_user.png",
+                  validator: (value) {
+                    if (value!.isEmpty == true || value == "") {
+                      return "حقل مطلوب";
+                    }
+                    return null;
+                  },
+                ),
+                SpacerH15(),
+                MyTextFormField(
+                  tag: "pass",
+                  labelText: "كلمة المرور",
+                  hintText: "ادخل كلمة المرور",
+                  AssetImageIcon: "assets/images/icon_pass.png",
+                  obscureText: true,
+                  validator: (value) {
+                    if (value!.isEmpty == true || value == "") {
+                      return "حقل مطلوب";
+                    }
+                    return null;
+                  },
+                ),
+                SpacerH13(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    FormTitle(
-                      firstText: "registration".tr,
-                      scandText: "registration_login".tr,
+                    CustomTitledCheckBox(
+                      title: "تذكرني",
+                      onChanged: (bool) {},
                     ),
-                    SpacerH17(),
-                    MyTextFormField(
-                      tag: "username",
-                      labelText: "اسم المستخدم",
-                      hintText: "ادخل اسم المستخدم",
-                      AssetImageIcon: "assets/images/icon_user.png",
-                      validator: (value) {
-                        if (value!.isEmpty == true || value == "") {
-                          return "حقل مطلوب";
-                        }
-                        return null;
-                      },
-                    ),
-                    SpacerH15(),
-                    MyTextFormField(
-                      tag: "pass",
-                      labelText: "كلمة المرور",
-                      hintText: "ادخل كلمة المرور",
-                      AssetImageIcon: "assets/images/icon_pass.png",
-                      obscureText: true,
-                      validator: (value) {
-                        if (value!.isEmpty == true || value == "") {
-                          return "حقل مطلوب";
-                        }
-                        return null;
-                      },
-                    ),
-                    SpacerH13(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomTitledCheckBox(
-                          title: "تذكرني",
-                          onChanged: (bool) {},
-                        ),
-                        MyTextButton(
-                          text: "نسيت كلمة المرور؟",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.fade,
-                                    child: ForgetPasswordView()));
+                    MyTextButton(
+                      text: "نسيت كلمة المرور؟",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.fade,
+                                child: ForgetPasswordView()));
 
-                            // Get.to(() => ForgetPasswordView());
-                          },
-                        ),
-                      ],
+                        // Get.to(() => ForgetPasswordView());
+                      },
                     ),
-                    SpacerH15(),
                   ],
                 ),
+                SpacerH15(),
                 LoginButton(
                   ButtonBackGroundColor: Color(AppConst.KColorBlue),
                   title: "تسجيل الدخول",
