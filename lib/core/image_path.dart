@@ -6,4 +6,7 @@ class AppImagePath {
   static const String icon_apple = "assets/svg/appel_icon.svg";
   static const String icon_twitter = "assets/svg/twitter_icon.svg";
   static const String icon_googel = "assets/svg/googel_icon.svg";
+
+  static const String onBoardingOne = "assets/images/Onboard_Screen_1.png";
+  static const String onBoardingTwo = "assets/images/Onboard_Screen_2.png";
 }
