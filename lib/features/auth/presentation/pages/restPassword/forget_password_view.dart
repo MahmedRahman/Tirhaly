@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/otp_view.dart';
+import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
@@ -17,6 +18,15 @@ class ForgetPasswordView extends GetView {
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
+        actions: [
+          backButton(onPressed: () {
+            Get.back();
+          })
+        ],
+      ),
       child: Form(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         key: _formKey,
