@@ -4,7 +4,6 @@ import 'package:thrhaly/core/routes/app_pages.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:thrhaly/core/theme_data.dart';
 import 'package:thrhaly/core/translations/app_translations.dart';
-import 'package:thrhaly/test.dart';
 
 void main() {
   runApp(

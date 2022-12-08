@@ -36,6 +36,7 @@ class LoginView extends GetView {
             left: 20.w,
             right: 20.w,
             child: LoginButton(
+              tag: "login",
               ButtonBackGroundColor: Color(
                 AppConst.KColorGreen,
               ),

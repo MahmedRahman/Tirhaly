@@ -87,6 +87,7 @@ class SignInView extends GetView {
             ),
             SpacerH15(),
             LoginButton(
+              tag: "login",
               ButtonBackGroundColor: Color(AppConst.KColorBlue),
               title: "sign in".tr,
               onPressed: () {
