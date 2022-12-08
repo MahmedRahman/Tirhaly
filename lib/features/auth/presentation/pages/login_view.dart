@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_images.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/skip_button.dart';
 import 'package:thrhaly/features/home/presentation/pages/home_view.dart';
 import 'package:thrhaly/features/onboard/presentation/widgets/base_on_boarding_page.dart';
 import '../widgets/login_button.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/features/auth/presentation/pages/sign_in_view.dart';
 
 class LoginView extends GetView {
@@ -38,7 +38,7 @@ class LoginView extends GetView {
             child: LoginButton(
               tag: "login",
               ButtonBackGroundColor: Color(
-                AppConst.KColorGreen,
+                AppColors.KColorGreen,
               ),
               title: "sign in".tr,
               onPressed: () {

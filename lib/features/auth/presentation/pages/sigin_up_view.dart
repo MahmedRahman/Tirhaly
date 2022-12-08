@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
+import 'package:thrhaly/core/const/app_images.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/sign_in_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -80,7 +80,7 @@ class SignUpView extends GetView {
             SpacerH17(),
             LoginButton(
               ButtonBackGroundColor: Color(
-                AppConst.KColorBlue,
+                AppColors.KColorBlue,
               ),
               title: "sign in".tr,
               onPressed: () {

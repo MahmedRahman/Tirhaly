@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
+import 'package:thrhaly/core/const/app_images.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/otp_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -59,7 +59,7 @@ class ForgetPasswordView extends GetView {
                 SpacerH21(),
                 LoginButton(
                   tag: "login",
-                  ButtonBackGroundColor: Color(AppConst.KColorBlue),
+                  ButtonBackGroundColor: Color(AppColors.KColorBlue),
                   title: "send".tr,
                   onPressed: () {
                     // _formKey.currentState!.validate();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_images.dart';
 import 'package:thrhaly/features/onboard/presentation/controller/onboard_first_screen_controller.dart';
 import 'package:thrhaly/features/onboard/presentation/widgets/base_on_boarding_page.dart';
 

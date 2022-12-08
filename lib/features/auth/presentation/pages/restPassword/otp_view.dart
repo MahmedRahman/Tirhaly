@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/rest_passeord_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -62,7 +62,7 @@ class OtpView extends GetView {
           SpacerH17(),
           LoginButton(
             tag: "forgetPassword",
-            ButtonBackGroundColor: Color(AppConst.KColorBlue),
+            ButtonBackGroundColor: Color(AppColors.KColorBlue),
             title: "done".tr,
             onPressed: () {
               Navigator.push(

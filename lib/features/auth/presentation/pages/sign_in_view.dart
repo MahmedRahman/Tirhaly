@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
+import 'package:thrhaly/core/const/app_images.dart';
 import 'package:thrhaly/core/routes/app_pages.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/forget_password_view.dart';
@@ -92,7 +92,7 @@ class SignInView extends GetView {
             SpacerH15(),
             LoginButton(
               tag: "login",
-              ButtonBackGroundColor: Color(AppConst.KColorBlue),
+              ButtonBackGroundColor: Color(AppColors.KColorBlue),
               title: "sign in".tr,
               onPressed: () {
                 _formKey.currentState!.validate();

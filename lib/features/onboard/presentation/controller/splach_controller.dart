@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:rive/rive.dart';
-import 'package:thrhaly/features/onboard/presentation/one_shot_animation_custom.dart';
+import 'package:thrhaly/features/onboard/presentation/helper/one_shot_animation_custom.dart';
 import 'package:thrhaly/features/onboard/presentation/pages/onboard_first_view.dart';
 
 class SplachController extends GetxController {

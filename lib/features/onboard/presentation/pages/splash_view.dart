@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rive/rive.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/features/onboard/presentation/controller/splach_controller.dart';
 
 class SplashView extends GetView<SplachController> {
@@ -10,7 +10,7 @@ class SplashView extends GetView<SplachController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(AppConst.KColorBlue),
+      backgroundColor: Color(AppColors.KColorBlue),
       body: Center(
         child: Container(
           width: 230,
