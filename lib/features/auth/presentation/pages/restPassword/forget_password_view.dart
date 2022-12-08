@@ -36,12 +36,13 @@ class ForgetPasswordView extends GetView {
             SpacerH12(),
             Text(
               "Please type your email below".tr,
-              style: Theme.of(Get.context!).textTheme.headlineSmall,
+              style: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+                    height: 1.5,
+                  ),
             ),
             SpacerH19(),
             FadeInUp(
-              from: 30,
-              duration: const Duration(milliseconds: 500),
+              delay: Duration(microseconds: 5000),
               child: Column(
                 children: [
                   MyTextFormField(
