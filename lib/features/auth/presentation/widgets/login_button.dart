@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/fontWeight_ex.dart';
+import 'package:thrhaly/core/extensions/fontWeight_ex.dart';
 
 Widget LoginButton({
   required void Function()? onPressed,

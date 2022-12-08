@@ -9,7 +9,7 @@ class OnboardFirstView extends GetView<OnboardScreenController> {
   @override
   Widget build(BuildContext context) {
     return const BaseOnBoardingPage(
-      imagePath: AppImagePath.onBoardingOne,
+      imagePath: AppImages.onBoardingOne,
     );
   }
 }

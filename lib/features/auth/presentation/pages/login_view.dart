@@ -29,7 +29,7 @@ class LoginView extends GetView {
         fit: StackFit.expand,
         children: [
           const BaseOnBoardingPage(
-            imagePath: AppImagePath.Onboard_Screen_3,
+            imagePath: AppImages.onBoardingThere,
           ),
           Positioned(
             bottom: 43.h,

@@ -37,7 +37,7 @@ class SignUpView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImagePath.icon_user,
+              AssetImageIcon: AppImages.icon_user,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -50,7 +50,7 @@ class SignUpView extends GetView {
               tag: "email",
               labelText: "email".tr,
               hintText: "enter email".tr,
-              AssetImageIcon: AppImagePath.icon_email,
+              AssetImageIcon: AppImages.icon_email,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -63,7 +63,7 @@ class SignUpView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImagePath.icon_pass,
+              AssetImageIcon: AppImages.icon_pass,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -99,17 +99,17 @@ class SignUpView extends GetView {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MySocialButton(
-                  iconAsset: AppImagePath.icon_google,
+                  iconAsset: AppImages.icon_google,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImagePath.icon_twitter,
+                  iconAsset: AppImages.icon_twitter,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImagePath.icon_apple,
+                  iconAsset: AppImages.icon_apple,
                   onPressed: () {},
                 ),
               ],
