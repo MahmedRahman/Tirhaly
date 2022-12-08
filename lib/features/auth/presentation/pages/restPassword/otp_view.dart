@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/rest_passeord_view.dart';
-import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
@@ -61,10 +61,20 @@ class OtpView extends GetView {
           MyTextButton(text: "Resend".tr, onPressed: () {}),
           SpacerH17(),
           LoginButton(
+            tag: "forgetPassword",
             ButtonBackGroundColor: Color(AppConst.KColorBlue),
             title: "done".tr,
             onPressed: () {
-              Get.to(() => ResetPasswordView());
+              Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  duration: Duration(
+                    milliseconds: (0.5 * 1000).round(),
+                  ),
+                  child: ResetPasswordView(),
+                ),
+              );
             },
           ),
           SizedBox(

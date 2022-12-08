@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
@@ -22,8 +23,14 @@ class BaseAuthPage extends GetView {
                     padding: const EdgeInsets.symmetric(horizontal: 47),
                     child: child),
                 Expanded(
-                  child: MyLogo(),
-                )
+                  child: FadeInUp(
+                    duration: Duration(
+                      milliseconds: (0.5 * 1000).round(),
+                    ),
+                    from: 30,
+                    child: MyLogo(),
+                  ),
+                ),
               ],
             ),
           ),

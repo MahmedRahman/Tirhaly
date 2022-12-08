@@ -37,7 +37,7 @@ class SignUpView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImages.icon_user,
+              AssetImageIcon: AppImages.icon_user_svg,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -50,7 +50,7 @@ class SignUpView extends GetView {
               tag: "email",
               labelText: "email".tr,
               hintText: "enter email".tr,
-              AssetImageIcon: AppImages.icon_email,
+              AssetImageIcon: AppImages.icon_email_svg,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -63,7 +63,7 @@ class SignUpView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImages.icon_pass,
+              AssetImageIcon: AppImages.icon_pass_svg,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {

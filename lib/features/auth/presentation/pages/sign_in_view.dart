@@ -42,7 +42,7 @@ class SignInView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImages.icon_user,
+              AssetImageIcon: AppImages.icon_user_svg,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -55,7 +55,7 @@ class SignInView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImages.icon_pass,
+              AssetImageIcon: AppImages.icon_pass_svg,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -75,24 +75,16 @@ class SignInView extends GetView {
                 MyTextButton(
                   text: "Forgot your password?".tr,
                   onPressed: () {
-                    Get.toNamed(Routes.ForgetPassword);
-
-                    // Get.to(
-                    //   () => ForgetPasswordView(),
-                    //   transition: Transition.fade,
-                    //   curve: Curves.easeInOut,
-                    //   duration: Duration(
-                    //     milliseconds: (0.5 * 1000).round(),
-                    //   ),
-                    // );
-
-                    // Navigator.push(
-                    //   context,
-                    //   PageTransition(
-                    //     type: PageTransitionType.fade,
-                    //     child: ForgetPasswordView(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: Duration(
+                          milliseconds: (0.5 * 1000).round(),
+                        ),
+                        child: ForgetPasswordView(),
+                      ),
+                    );
                   },
                 ),
               ],
@@ -136,8 +128,15 @@ class SignInView extends GetView {
             SpacerH18(),
             MyTwoTextButton(
               onPressed: () {
-                Get.to(
-                  () => SignUpView(),
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(
+                      milliseconds: (0.5 * 1000).round(),
+                    ),
+                    child: SignUpView(),
+                  ),
                 );
               },
               firstText: "Don\'t have an account?".tr,
