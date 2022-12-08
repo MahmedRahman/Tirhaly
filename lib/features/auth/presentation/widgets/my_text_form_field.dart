@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/fontWeight_ex.dart';
+import 'package:thrhaly/core/image_path.dart';
 
 MyTextFormField({
   required String hintText,
@@ -37,12 +39,7 @@ MyTextFormField({
                   Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
                         color: Color(AppConst.KColorBlack),
                       ),
-              prefixIcon: ImageIcon(
-                color: Color(0xff515151),
-                AssetImage(
-                  AssetImageIcon,
-                ),
-              ),
+              prefixIcon: SvgPicture.asset(AssetImageIcon).paddingAll(15),
               prefixIconColor: Color(0xff515151),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),

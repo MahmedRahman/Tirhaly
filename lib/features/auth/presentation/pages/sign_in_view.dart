@@ -42,7 +42,7 @@ class SignInView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImagePath.icon_user,
+              AssetImageIcon: AppImagePath.icon_user_svg,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -55,7 +55,7 @@ class SignInView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImagePath.icon_pass,
+              AssetImageIcon: AppImagePath.icon_pass_svg,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {

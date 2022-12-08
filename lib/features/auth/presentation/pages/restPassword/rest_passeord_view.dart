@@ -36,7 +36,7 @@ class ResetPasswordView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImagePath.icon_pass,
+              AssetImageIcon: AppImagePath.icon_pass_svg,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -50,7 +50,7 @@ class ResetPasswordView extends GetView {
               tag: "repass",
               labelText: "Reset password".tr,
               hintText: "Enter the password".tr,
-              AssetImageIcon: AppImagePath.icon_pass,
+              AssetImageIcon: AppImagePath.icon_pass_svg,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {

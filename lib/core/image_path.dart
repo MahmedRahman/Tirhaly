@@ -9,4 +9,9 @@ class AppImagePath {
 
   static const String onBoardingOne = "assets/images/Onboard_Screen_1.png";
   static const String onBoardingTwo = "assets/images/Onboard_Screen_2.png";
+
+  /// Svg icons
+  static const String icon_user_svg = "assets/svg/user.svg";
+  static const String icon_email_svg = "assets/svg/email.svg";
+  static const String icon_pass_svg = "assets/svg/lock.svg";
 }

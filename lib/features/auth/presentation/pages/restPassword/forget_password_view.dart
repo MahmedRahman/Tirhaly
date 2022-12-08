@@ -53,7 +53,7 @@ class ForgetPasswordView extends GetView {
                     tag: "email",
                     labelText: "email".tr,
                     hintText: "enter email".tr,
-                    AssetImageIcon: AppImagePath.icon_email,
+                    AssetImageIcon: AppImagePath.icon_email_svg,
                     validator: (value) {
                       if (value!.isEmpty == true || value == "") {
                         return "Required field".tr;
