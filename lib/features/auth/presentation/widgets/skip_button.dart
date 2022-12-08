@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/fontWeight_ex.dart';
 import 'package:thrhaly/core/spacer.dart';
 
 Widget SkipButton({

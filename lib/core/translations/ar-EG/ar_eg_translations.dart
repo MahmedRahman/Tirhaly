@@ -389,6 +389,19 @@ final Map<String, String> arEg = {
   'terms and conditions': 'أوافق على الشروط والأحكام',
   'log in with': 'أو الدخول بواسطة',
   'Don\'t have an account?': 'ليس لديك حساب؟',
-  
-  
+  'Remember me': 'تذكرني',
+  'Create an account': 'أنشئ حساب',
+  'I forgot': 'نسيت',
+  'password?': 'كلمة المرور؟',
+  'Please type your email below': 'الرجاء كتابة البريد الإلكتروني الخاص بك أدناه\nللحصول على كود التأكيد',
+  'send': 'إرسال',
+  'code': 'كود',
+  'confirmation': 'التأكيد',
+  'We have sent you a confirmation code to your email': 'لقد أرسلنا لك كود التأكيد على الإيميل',
+  'Please enter the code with a minimum of 6 digits': 'يرجي ادخال الكود بشكل صحيح لا يقل عن ٦ ارقام',
+  'Resend': 'إعادة إرسال',
+  'done': 'تأكيد',
+  'repeat': 'إعادة',
+  'Reset password': 'إعادة كلمة المرور',
+  'Forgot your password?': 'نسيت كلمة المرور؟',
 };

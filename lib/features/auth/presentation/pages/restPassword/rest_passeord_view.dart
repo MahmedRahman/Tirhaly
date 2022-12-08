@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/image_path.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -17,70 +18,69 @@ class ResetPasswordView extends GetView {
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          elevation: 0,
-          actions: [
-            backButton(
-              onPressed: () {
-                Get.back();
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
+        actions: [
+          backButton(
+            onPressed: () {
+              Get.back();
+            },
+          )
+        ],
+      ),
+      child: Form(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        key: _formKey,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 73.h,
+            ),
+            FormTitle(
+              firstText: "repeat".tr,
+              scandText: "password".tr,
+            ),
+            SpacerH19(),
+            MyTextFormField(
+              tag: "pass",
+              labelText: "password".tr,
+              hintText: "enter password".tr,
+              AssetImageIcon: AppImagePath.icon_pass,
+              obscureText: true,
+              validator: (value) {
+                if (value!.isEmpty == true || value == "") {
+                  return "Required field".tr;
+                }
+                return null;
               },
-            )
+            ),
+            SpacerH15(),
+            MyTextFormField(
+              tag: "repass",
+              labelText: "Reset password".tr,
+              hintText: "Enter the password".tr,
+              AssetImageIcon: AppImagePath.icon_pass,
+              obscureText: true,
+              validator: (value) {
+                if (value!.isEmpty == true || value == "") {
+                  return "Required field".tr;
+                }
+                return null;
+              },
+            ),
+            SpacerH18(),
+            LoginButton(
+              ButtonBackGroundColor: Color(AppConst.KColorBlue),
+              title: "save".tr,
+              onPressed: () {
+                Get.to(() => HomeView());
+              },
+            ),
+            SpacerH15(),
           ],
         ),
-        child: Form(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          key: _formKey,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 73.h,
-              ),
-              FormTitle(
-                firstText: "إعادة",
-                scandText: "كلمة المرور",
-              ),
-              SpacerH19(),
-              MyTextFormField(
-                tag: "pass",
-                labelText: "كلمة المرور",
-                hintText: "ادخل كلمة المرور",
-                AssetImageIcon: "assets/images/icon_pass.png",
-                obscureText: true,
-                validator: (value) {
-                  if (value!.isEmpty == true || value == "") {
-                    return "حقل مطلوب";
-                  }
-                  return null;
-                },
-              ),
-              SpacerH15(),
-              MyTextFormField(
-                tag: "pass",
-                labelText: "إعادة كلمة المرور",
-                hintText: "ادخل كلمة المرور",
-                AssetImageIcon: "assets/images/icon_pass.png",
-                obscureText: true,
-                validator: (value) {
-                  if (value!.isEmpty == true || value == "") {
-                    return "حقل مطلوب";
-                  }
-                  return null;
-                },
-              ),
-              SpacerH18(),
-              LoginButton(
-                ButtonBackGroundColor: Color(AppConst.KColorBlue),
-                title: "حفظ",
-                onPressed: () {
-                  Get.to(() => HomeView());
-                },
-              ),
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

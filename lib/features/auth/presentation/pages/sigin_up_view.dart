@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/image_path.dart';
@@ -11,9 +10,7 @@ import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/custom_titiled_check_box.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
-import 'package:thrhaly/features/auth/presentation/widgets/my_check_box.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_social_button.dart';
-import 'package:thrhaly/features/auth/presentation/widgets/my_text_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_form_field.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_two_text_button.dart';
 
@@ -93,7 +90,7 @@ class SignUpView extends GetView {
             SpacerH20(),
             Center(
               child: Text(
-                "أو الدخول بواسطة",
+                "log in with".tr,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
@@ -124,7 +121,7 @@ class SignUpView extends GetView {
                   () => SignInView(),
                 );
               },
-              firstText: "Don\'t have an account?",
+              firstText: "Don\'t have an account?".tr,
               scandText: "sign in".tr,
             ),
           ],

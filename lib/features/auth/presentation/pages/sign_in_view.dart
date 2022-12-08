@@ -24,113 +24,115 @@ class SignInView extends GetView {
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(
-        child: Form(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            key: _formKey,
-            child: Column(
+      child: Form(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        key: _formKey,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 73.h,
+            ),
+            FormTitle(
+              firstText: "registration".tr,
+              scandText: "registration_login".tr,
+            ),
+            SpacerH17(),
+            MyTextFormField(
+              tag: "username",
+              labelText: "user name".tr,
+              hintText: "enter user name".tr,
+              AssetImageIcon: AppImagePath.icon_user,
+              validator: (value) {
+                if (value!.isEmpty == true || value == "") {
+                  return "Required field".tr;
+                }
+                return null;
+              },
+            ),
+            SpacerH15(),
+            MyTextFormField(
+              tag: "pass",
+              labelText: "password".tr,
+              hintText: "enter password".tr,
+              AssetImageIcon: AppImagePath.icon_pass,
+              obscureText: true,
+              validator: (value) {
+                if (value!.isEmpty == true || value == "") {
+                  return "Required field".tr;
+                }
+                return null;
+              },
+            ),
+            SpacerH13(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: 73.h,
+                CustomTitledCheckBox(
+                  title: "Remember me".tr,
+                  onChanged: (bool) {},
                 ),
-                FormTitle(
-                  firstText: "registration".tr,
-                  scandText: "registration_login".tr,
-                ),
-                SpacerH17(),
-                MyTextFormField(
-                  tag: "username",
-                  labelText: "اسم المستخدم",
-                  hintText: "ادخل اسم المستخدم",
-                  AssetImageIcon: "assets/images/icon_user.png",
-                  validator: (value) {
-                    if (value!.isEmpty == true || value == "") {
-                      return "حقل مطلوب";
-                    }
-                    return null;
-                  },
-                ),
-                SpacerH15(),
-                MyTextFormField(
-                  tag: "pass",
-                  labelText: "كلمة المرور",
-                  hintText: "ادخل كلمة المرور",
-                  AssetImageIcon: "assets/images/icon_pass.png",
-                  obscureText: true,
-                  validator: (value) {
-                    if (value!.isEmpty == true || value == "") {
-                      return "حقل مطلوب";
-                    }
-                    return null;
-                  },
-                ),
-                SpacerH13(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomTitledCheckBox(
-                      title: "تذكرني",
-                      onChanged: (bool) {},
-                    ),
-                    MyTextButton(
-                      text: "نسيت كلمة المرور؟",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.fade,
-                                child: ForgetPasswordView()));
-
-                        // Get.to(() => ForgetPasswordView());
-                      },
-                    ),
-                  ],
-                ),
-                SpacerH15(),
-                LoginButton(
-                  ButtonBackGroundColor: Color(AppConst.KColorBlue),
-                  title: "تسجيل الدخول",
+                MyTextButton(
+                  text: "Forgot your password?".tr,
                   onPressed: () {
-                    _formKey.currentState!.validate();
-                  },
-                ),
-                SpacerH20(),
-                Center(
-                  child: Text(
-                    "أو الدخول بواسطة",
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                ),
-                SpacerH17(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MySocialButton(
-                      iconAsset: AppImagePath.icon_google,
-                      onPressed: () {},
-                    ),
-                    SpacerW29(),
-                    MySocialButton(
-                      iconAsset: AppImagePath.icon_twitter,
-                      onPressed: () {},
-                    ),
-                    SpacerW29(),
-                    MySocialButton(
-                      iconAsset: AppImagePath.icon_apple,
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-                SpacerH18(),
-                MyTwoTextButton(
-                  onPressed: () {
-                    Get.to(
-                      () => SignUpView(),
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: ForgetPasswordView(),
+                      ),
                     );
                   },
-                  firstText: "ليس لديك حساب؟",
-                  scandText: "أنشئ حساب",
                 ),
               ],
-            )));
+            ),
+            SpacerH15(),
+            LoginButton(
+              ButtonBackGroundColor: Color(AppConst.KColorBlue),
+              title: "sign in".tr,
+              onPressed: () {
+                _formKey.currentState!.validate();
+              },
+            ),
+            SpacerH20(),
+            Center(
+              child: Text(
+                "log in with".tr,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            ),
+            SpacerH17(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MySocialButton(
+                  iconAsset: AppImagePath.icon_google,
+                  onPressed: () {},
+                ),
+                SpacerW29(),
+                MySocialButton(
+                  iconAsset: AppImagePath.icon_twitter,
+                  onPressed: () {},
+                ),
+                SpacerW29(),
+                MySocialButton(
+                  iconAsset: AppImagePath.icon_apple,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            SpacerH18(),
+            MyTwoTextButton(
+              onPressed: () {
+                Get.to(
+                  () => SignUpView(),
+                );
+              },
+              firstText: "Don\'t have an account?".tr,
+              scandText: "Create an account".tr,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

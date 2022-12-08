@@ -1,9 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/image_path.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/otp_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
@@ -40,12 +40,12 @@ class ForgetPasswordView extends GetView {
               height: 73.h,
             ),
             FormTitle(
-              firstText: "نسيت",
-              scandText: "كلمة المرور؟",
+              firstText: "I forgot".tr,
+              scandText: "password?".tr,
             ),
             SpacerH12(),
             Text(
-              "الرجاء كتابة البريد الإلكتروني الخاص بك أدناه\nللحصول على كود التأكيد",
+              "Please type your email below".tr,
               style: Theme.of(Get.context!).textTheme.headlineSmall,
             ),
             SpacerH19(),
@@ -56,12 +56,12 @@ class ForgetPasswordView extends GetView {
                 children: [
                   MyTextFormField(
                     tag: "email",
-                    labelText: "البريد الإلكتروني",
-                    hintText: "ادخل البريد الإلكتروني",
-                    AssetImageIcon: "assets/images/icon_email.png",
+                    labelText: "email".tr,
+                    hintText: "enter email".tr,
+                    AssetImageIcon: AppImagePath.icon_email,
                     validator: (value) {
                       if (value!.isEmpty == true || value == "") {
-                        return "حقل مطلوب";
+                        return "Required field".tr;
                       }
                       return null;
                     },
@@ -69,7 +69,7 @@ class ForgetPasswordView extends GetView {
                   SpacerH21(),
                   LoginButton(
                     ButtonBackGroundColor: Color(AppConst.KColorBlue),
-                    title: "إرسال",
+                    title: "send".tr,
                     onPressed: () {
                       _formKey.currentState!.validate();
                       Get.to(() => OtpView());
@@ -78,9 +78,7 @@ class ForgetPasswordView extends GetView {
                 ],
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            SpacerH15(),
           ],
         ),
       ),
