@@ -14,60 +14,68 @@ MyTextFormField({
 }) =>
     SizedBox(
       height: 50.h,
-      child: TextFormField(
-        obscureText: obscureText,
-        validator: validator,
-        cursorColor: Color(AppConst.KColorBlue),
-        decoration: InputDecoration(
-          labelText: labelText,
-          floatingLabelStyle: TextStyle(
-            fontWeight: FontWeightEx.bold,
-          ),
-          labelStyle: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
-                color: Color(AppConst.KColorBlack),
-                fontWeight: FontWeightEx.medium,
+      child: Hero(
+        tag: tag,
+        child: Material(
+          type: MaterialType.transparency,
+          child: TextFormField(
+            obscureText: obscureText,
+            validator: validator,
+            cursorColor: Color(AppConst.KColorBlue),
+            decoration: InputDecoration(
+              labelText: labelText,
+              floatingLabelStyle: TextStyle(
+                fontWeight: FontWeightEx.bold,
               ),
-          hintText: hintText,
-          hintStyle: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
-                color: Color(AppConst.KColorBlack),
+              labelStyle:
+                  Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+                        color: Color(AppConst.KColorBlack),
+                        fontWeight: FontWeightEx.medium,
+                      ),
+              hintText: hintText,
+              hintStyle:
+                  Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+                        color: Color(AppConst.KColorBlack),
+                      ),
+              prefixIcon: ImageIcon(
+                color: Color(0xff515151),
+                AssetImage(
+                  AssetImageIcon,
+                ),
               ),
-          prefixIcon: ImageIcon(
-            color: Color(0xff515151),
-            AssetImage(
-              AssetImageIcon,
-            ),
-          ),
-          prefixIconColor: Color(0xff515151),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(
-              color: Color(0xff8D8D8D),
-              width: .8.w,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(
-              color: Color(0xffF16623),
-              width: .8.w,
-            ),
-          ),
-          errorStyle: TextStyle(
-            color: Color(0xffF16623),
-            fontWeight: FontWeight.w600,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(
-              color: Color(AppConst.KColorBlue),
-              width: .8.w,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-            borderSide: BorderSide(
-              color: Color(0xff8D8D8D),
-              width: .8.w,
+              prefixIconColor: Color(0xff515151),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: BorderSide(
+                  color: Color(0xff8D8D8D),
+                  width: .8.w,
+                ),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: BorderSide(
+                  color: Color(0xffF16623),
+                  width: .8.w,
+                ),
+              ),
+              errorStyle: TextStyle(
+                color: Color(0xffF16623),
+                fontWeight: FontWeight.w600,
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: BorderSide(
+                  color: Color(AppConst.KColorBlue),
+                  width: .8.w,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: BorderSide(
+                  color: Color(0xff8D8D8D),
+                  width: .8.w,
+                ),
+              ),
             ),
           ),
         ),
