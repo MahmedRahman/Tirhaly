@@ -42,7 +42,10 @@ class ForgetPasswordView extends GetView {
             ),
             SpacerH19(),
             FadeInUp(
-              delay: Duration(microseconds: 5000),
+              duration: Duration(
+                milliseconds: (0.5 * 1000).round(),
+              ),
+              from: 30,
               child: Column(
                 children: [
                   MyTextFormField(
