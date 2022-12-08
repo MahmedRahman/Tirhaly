@@ -21,17 +21,7 @@ class OtpView extends GetView {
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0,
-        actions: [
-          backButton(
-            onPressed: () {
-              Get.back();
-            },
-          )
-        ],
-      ),
+      withBackButton: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

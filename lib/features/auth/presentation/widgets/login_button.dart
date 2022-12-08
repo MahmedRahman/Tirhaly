@@ -9,26 +9,23 @@ Widget LoginButton({
   required Color? ButtonBackGroundColor,
   required String title,
 }) =>
-    Hero(
-      tag: "LoginButton",
-      child: Material(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(3.65.r),
-        ),
-        color: ButtonBackGroundColor,
-        clipBehavior: Clip.antiAlias,
-        child: MaterialButton(
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          onPressed: onPressed,
-          minWidth: Get.width,
-          height: 31.97.h,
-          child: Text(
-            title,
-            style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
-                  color: Colors.white,
-                  fontSize: 15.sp,
-                ),
-          ),
+    Material(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3.65.r),
+      ),
+      color: ButtonBackGroundColor,
+      clipBehavior: Clip.antiAlias,
+      child: MaterialButton(
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        onPressed: onPressed,
+        minWidth: Get.width,
+        height: 31.97.h,
+        child: Text(
+          title,
+          style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
+                color: Colors.white,
+                fontSize: 15.sp,
+              ),
         ),
       ),
     );
