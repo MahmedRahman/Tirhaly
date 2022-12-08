@@ -128,8 +128,15 @@ class SignInView extends GetView {
             SpacerH18(),
             MyTwoTextButton(
               onPressed: () {
-                Get.to(
-                  () => SignUpView(),
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(
+                      milliseconds: (0.5 * 1000).round(),
+                    ),
+                    child: SignUpView(),
+                  ),
                 );
               },
               firstText: "Don\'t have an account?".tr,
