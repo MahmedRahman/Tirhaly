@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/image_path.dart';
 import 'package:thrhaly/core/spacer.dart';
@@ -62,11 +63,22 @@ class ForgetPasswordView extends GetView {
                   ),
                   SpacerH21(),
                   LoginButton(
+                    tag: "forgetPassword",
                     ButtonBackGroundColor: Color(AppConst.KColorBlue),
                     title: "send".tr,
                     onPressed: () {
-                      _formKey.currentState!.validate();
-                      Get.to(() => OtpView());
+
+                      // _formKey.currentState!.validate();
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.fade,
+                          duration: Duration(
+                            milliseconds: (0.5 * 1000).round(),
+                          ),
+                          child: OtpView(),
+                        ),
+                      );
                     },
                   ),
                 ],
