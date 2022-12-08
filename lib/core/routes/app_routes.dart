@@ -6,6 +6,7 @@ abstract class Routes {
 
   static const SPLASH = _Paths.SPLASH;
   static const LOGIN = _Paths.Login;
+   static const ForgetPassword = _Paths.ForgetPassword;
 }
 
 abstract class _Paths {
@@ -13,4 +14,5 @@ abstract class _Paths {
 
   static const SPLASH = '/SplashPage';
   static const Login = '/LoginView';
+    static const ForgetPassword = '/ForgetPasswordView';
 }

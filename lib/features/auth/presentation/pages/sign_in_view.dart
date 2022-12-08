@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:thrhaly/core/const.dart';
 import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/routes/app_pages.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/forget_password_view.dart';
 import 'package:thrhaly/features/auth/presentation/pages/sigin_up_view.dart';
@@ -74,12 +75,16 @@ class SignInView extends GetView {
                 MyTextButton(
                   text: "Forgot your password?".tr,
                   onPressed: () {
-                    Get.to(
-                      () => ForgetPasswordView(),
-                      transition: Transition.fade,
-                      curve: Curves.easeInOut,
-                      duration: Duration(seconds: 1),
-                    );
+                    Get.toNamed(Routes.ForgetPassword);
+
+                    // Get.to(
+                    //   () => ForgetPasswordView(),
+                    //   transition: Transition.fade,
+                    //   curve: Curves.easeInOut,
+                    //   duration: Duration(
+                    //     milliseconds: (0.5 * 1000).round(),
+                    //   ),
+                    // );
 
                     // Navigator.push(
                     //   context,
