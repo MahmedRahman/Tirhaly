@@ -75,24 +75,16 @@ class SignInView extends GetView {
                 MyTextButton(
                   text: "Forgot your password?".tr,
                   onPressed: () {
-                    Get.toNamed(Routes.ForgetPassword);
-
-                    // Get.to(
-                    //   () => ForgetPasswordView(),
-                    //   transition: Transition.fade,
-                    //   curve: Curves.easeInOut,
-                    //   duration: Duration(
-                    //     milliseconds: (0.5 * 1000).round(),
-                    //   ),
-                    // );
-
-                    // Navigator.push(
-                    //   context,
-                    //   PageTransition(
-                    //     type: PageTransitionType.fade,
-                    //     child: ForgetPasswordView(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: Duration(
+                          milliseconds: (0.5 * 1000).round(),
+                        ),
+                        child: ForgetPasswordView(),
+                      ),
+                    );
                   },
                 ),
               ],
