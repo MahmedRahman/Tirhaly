@@ -42,47 +42,40 @@ class ForgetPasswordView extends GetView {
                   ),
             ),
             SpacerH19(),
-            FadeInUp(
-              duration: Duration(
-                milliseconds: (0.5 * 1000).round(),
-              ),
-              from: 30,
-              child: Column(
-                children: [
-                  MyTextFormField(
-                    tag: "email",
-                    labelText: "email".tr,
-                    hintText: "enter email".tr,
-                    AssetImageIcon: AppImagePath.icon_email_svg,
-                    validator: (value) {
-                      if (value!.isEmpty == true || value == "") {
-                        return "Required field".tr;
-                      }
-                      return null;
-                    },
-                  ),
-                  SpacerH21(),
-                  LoginButton(
-                    tag: "forgetPassword",
-                    ButtonBackGroundColor: Color(AppConst.KColorBlue),
-                    title: "send".tr,
-                    onPressed: () {
-
-                      // _formKey.currentState!.validate();
-                      Navigator.push(
-                        context,
-                        PageTransition(
-                          type: PageTransitionType.fade,
-                          duration: Duration(
-                            milliseconds: (0.5 * 1000).round(),
-                          ),
-                          child: OtpView(),
+            Column(
+              children: [
+                MyTextFormField(
+                  tag: "pass",
+                  labelText: "email".tr,
+                  hintText: "enter email".tr,
+                  AssetImageIcon: AppImagePath.icon_email_svg,
+                  validator: (value) {
+                    if (value!.isEmpty == true || value == "") {
+                      return "Required field".tr;
+                    }
+                    return null;
+                  },
+                ),
+                SpacerH21(),
+                LoginButton(
+                  tag: "login",
+                  ButtonBackGroundColor: Color(AppConst.KColorBlue),
+                  title: "send".tr,
+                  onPressed: () {
+                    // _formKey.currentState!.validate();
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        duration: Duration(
+                          milliseconds: (0.5 * 1000).round(),
                         ),
-                      );
-                    },
-                  ),
-                ],
-              ),
+                        child: OtpView(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
             SpacerH15(),
           ],
