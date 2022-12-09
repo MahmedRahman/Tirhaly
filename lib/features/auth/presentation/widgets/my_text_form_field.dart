@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/core/extensions/fontWeight_ex.dart';
-import 'package:thrhaly/core/const/app_images.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
 
 MyTextFormField({
   required String hintText,

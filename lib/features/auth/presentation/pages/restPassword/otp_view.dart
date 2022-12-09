@@ -10,6 +10,8 @@ import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/pin_code_field.dart';
+
+import '../../../../../core/routes/app_routes_management.dart';
 // import this
 
 class OtpView extends GetView {
@@ -65,15 +67,9 @@ class OtpView extends GetView {
             ButtonBackGroundColor: Color(AppColors.KColorBlue),
             title: "done".tr,
             onPressed: () {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                PageTransition(
-                  type: PageTransitionType.fade,
-                  duration: Duration(
-                    milliseconds: (0.5 * 1000).round(),
-                  ),
-                  child: ResetPasswordView(),
-                ),
+                RouteGenerator.ResetPassword,
               );
             },
           ),

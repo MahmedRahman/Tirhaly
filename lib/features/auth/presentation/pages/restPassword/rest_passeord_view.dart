@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const/app_colors.dart';
-import 'package:thrhaly/core/const/app_images.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/back_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -36,7 +37,7 @@ class ResetPasswordView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImages.icon_pass_svg,
+              AssetImageIcon: AppAssets.iconSvgPass,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -50,7 +51,7 @@ class ResetPasswordView extends GetView {
               tag: "repass",
               labelText: "Reset password".tr,
               hintText: "Enter the password".tr,
-              AssetImageIcon: AppImages.icon_pass_svg,
+              AssetImageIcon: AppAssets.iconSvgPass,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -64,7 +65,10 @@ class ResetPasswordView extends GetView {
               ButtonBackGroundColor: Color(AppColors.KColorBlue),
               title: "save".tr,
               onPressed: () {
-                Get.to(() => HomeView());
+                  Navigator.pushNamed(
+                context,
+                RouteGenerator.home,
+              );
               },
             ),
             SpacerH15(),

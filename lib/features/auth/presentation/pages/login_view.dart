@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const/app_images.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/skip_button.dart';
 import 'package:thrhaly/features/home/presentation/pages/home_view.dart';
 import 'package:thrhaly/features/onboard/presentation/widgets/base_on_boarding_page.dart';
@@ -21,7 +22,10 @@ class LoginView extends GetView {
         centerTitle: false,
         title: SkipButton(
           onTap: () {
-            Get.to(() => HomeView());
+            Navigator.pushNamed(
+              context,
+              RouteGenerator.home,
+            );
           },
         ),
       ),
@@ -29,7 +33,7 @@ class LoginView extends GetView {
         fit: StackFit.expand,
         children: [
           const BaseOnBoardingPage(
-            imagePath: AppImages.onBoardingThere,
+            imagePath: AppAssets.onBoardingThere,
           ),
           Positioned(
             bottom: 43.h,
@@ -42,8 +46,9 @@ class LoginView extends GetView {
               ),
               title: "sign in".tr,
               onPressed: () {
-                Get.to(
-                  () => SignInView(),
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.SignIn,
                 );
               },
             ),

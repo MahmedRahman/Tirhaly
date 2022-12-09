@@ -5,11 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:thrhaly/core/const/app_colors.dart';
-import 'package:thrhaly/core/const/app_images.dart';
-import 'package:thrhaly/core/routes/app_pages.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/core/spacer.dart';
-import 'package:thrhaly/features/auth/presentation/pages/restPassword/forget_password_view.dart';
-import 'package:thrhaly/features/auth/presentation/pages/sigin_up_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/custom_titiled_check_box.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
@@ -42,7 +40,7 @@ class SignInView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImages.icon_user_svg,
+              AssetImageIcon: AppAssets.iconSvgUser,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -55,7 +53,7 @@ class SignInView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImages.icon_pass_svg,
+              AssetImageIcon: AppAssets.iconSvgPass,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -75,15 +73,9 @@ class SignInView extends GetView {
                 MyTextButton(
                   text: "Forgot your password?".tr,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushNamed(
                       context,
-                      PageTransition(
-                        type: PageTransitionType.fade,
-                        duration: Duration(
-                          milliseconds: (0.5 * 1000).round(),
-                        ),
-                        child: ForgetPasswordView(),
-                      ),
+                      RouteGenerator.ForgetPassword,
                     );
                   },
                 ),
@@ -95,7 +87,10 @@ class SignInView extends GetView {
               ButtonBackGroundColor: Color(AppColors.KColorBlue),
               title: "sign in".tr,
               onPressed: () {
-                _formKey.currentState!.validate();
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.home,
+                );
               },
             ),
             SpacerH20(),
@@ -110,17 +105,17 @@ class SignInView extends GetView {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MySocialButton(
-                  iconAsset: AppImages.icon_google,
+                  iconAsset: AppAssets.iconSvgGoogle,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImages.icon_twitter,
+                  iconAsset: AppAssets.iconSvgTwitter,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImages.icon_apple,
+                  iconAsset: AppAssets.iconSvgApple,
                   onPressed: () {},
                 ),
               ],
@@ -128,15 +123,9 @@ class SignInView extends GetView {
             SpacerH18(),
             MyTwoTextButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushNamed(
                   context,
-                  PageTransition(
-                    type: PageTransitionType.fade,
-                    duration: Duration(
-                      milliseconds: (0.5 * 1000).round(),
-                    ),
-                    child: SignUpView(),
-                  ),
+                  RouteGenerator.SignUp,
                 );
               },
               firstText: "Don\'t have an account?".tr,

@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:thrhaly/core/const/app_colors.dart';
-import 'package:thrhaly/core/const/app_images.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/sign_in_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -37,7 +38,7 @@ class SignUpView extends GetView {
               tag: "username",
               labelText: "user name".tr,
               hintText: "enter user name".tr,
-              AssetImageIcon: AppImages.icon_user_svg,
+              AssetImageIcon: AppAssets.iconSvgUser,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -50,7 +51,7 @@ class SignUpView extends GetView {
               tag: "email",
               labelText: "email".tr,
               hintText: "enter email".tr,
-              AssetImageIcon: AppImages.icon_email_svg,
+              AssetImageIcon: AppAssets.iconSvgEmail,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
                   return "Required field".tr;
@@ -63,7 +64,7 @@ class SignUpView extends GetView {
               tag: "pass",
               labelText: "password".tr,
               hintText: "enter password".tr,
-              AssetImageIcon: AppImages.icon_pass_svg,
+              AssetImageIcon: AppAssets.iconSvgPass,
               obscureText: true,
               validator: (value) {
                 if (value!.isEmpty == true || value == "") {
@@ -84,7 +85,10 @@ class SignUpView extends GetView {
               ),
               title: "sign in".tr,
               onPressed: () {
-                _formKey.currentState!.validate();
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.home,
+                );
               },
             ),
             SpacerH20(),
@@ -99,17 +103,17 @@ class SignUpView extends GetView {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MySocialButton(
-                  iconAsset: AppImages.icon_google,
+                  iconAsset: AppAssets.iconSvgGoogle,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImages.icon_twitter,
+                  iconAsset: AppAssets.iconSvgTwitter,
                   onPressed: () {},
                 ),
                 SpacerW29(),
                 MySocialButton(
-                  iconAsset: AppImages.icon_apple,
+                  iconAsset: AppAssets.iconSvgApple,
                   onPressed: () {},
                 ),
               ],
@@ -117,8 +121,9 @@ class SignUpView extends GetView {
             SpacerH18(),
             MyTwoTextButton(
               onPressed: () {
-                Get.to(
-                  () => SignInView(),
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.SignIn,
                 );
               },
               firstText: "Don\'t have an account?".tr,
