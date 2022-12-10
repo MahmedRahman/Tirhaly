@@ -6,8 +6,11 @@ import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/enumerated/enumerated.dart';
+import 'package:thrhaly/core/exception/auth_exception_handler.dart';
 import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/core/spacer.dart';
+import 'package:thrhaly/features/auth/presentation/controller/auth_controler.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/custom_titiled_check_box.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
@@ -16,10 +19,11 @@ import 'package:thrhaly/features/auth/presentation/widgets/my_social_button.dart
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_form_field.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_two_text_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class SignInView extends GetView {
+class SignInView extends GetView<AuthController> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  AuthController controller = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(
@@ -86,11 +90,26 @@ class SignInView extends GetView {
               tag: "login",
               ButtonBackGroundColor: Color(AppColors.KColorBlue),
               title: "sign in".tr,
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  RouteGenerator.home,
-                );
+              onPressed: () async {
+                // AuthStatus authStatus = await controller.signInWithEmailAndPassword(
+                //   email: "atpEgypt@gmail.com",
+                //   password: "5797895",
+                // );
+
+                // if (authStatus == AuthStatus.successful) {
+                //   Fluttertoast.showToast(msg: "Welcome On My App");
+                //   Navigator.pushNamed(
+                //     context,
+                //     RouteGenerator.home,
+                //   );
+                //   return;
+                // }
+
+                // Fluttertoast.showToast(
+                //   msg: AuthExceptionHandler.generateErrorMessage(
+                //     authStatus,
+                //   ),
+                // );
               },
             ),
             SpacerH20(),

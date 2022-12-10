@@ -18,6 +18,8 @@ import 'package:thrhaly/features/auth/presentation/widgets/my_two_text_button.da
 class SignUpView extends GetView {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  
+
   @override
   Widget build(BuildContext context) {
     return BaseAuthPage(

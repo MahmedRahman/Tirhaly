@@ -16,7 +16,7 @@ dependencies:
   page_transition: ^2.0.9
   pin_code_fields: ^7.4.0
   flutter_launcher_icons: ^0.11.0
-
+  fluttertoast: ^8.1.1
   
   flutter: 
     sdk: flutter
