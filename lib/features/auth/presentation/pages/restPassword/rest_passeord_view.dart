@@ -62,6 +62,7 @@ class ResetPasswordView extends GetView {
             ),
             SpacerH18(),
             LoginButton(
+              tag: 'login',
               ButtonBackGroundColor: Color(AppColors.KColorBlue),
               title: "save".tr,
               onPressed: () {

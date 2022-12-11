@@ -82,6 +82,7 @@ class SignUpView extends GetView {
             ),
             SpacerH17(),
             LoginButton(
+              tag: 'login',
               ButtonBackGroundColor: Color(
                 AppColors.KColorBlue,
               ),

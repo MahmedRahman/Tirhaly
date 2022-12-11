@@ -63,7 +63,7 @@ class OtpView extends GetView {
           MyTextButton(text: "Resend".tr, onPressed: () {}),
           SpacerH17(),
           LoginButton(
-            tag: "forgetPassword",
+            tag: 'login',
             ButtonBackGroundColor: Color(AppColors.KColorBlue),
             title: "done".tr,
             onPressed: () {
