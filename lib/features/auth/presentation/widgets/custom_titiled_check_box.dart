@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 
 class CustomTitledCheckBox extends StatelessWidget {
   CustomTitledCheckBox({
@@ -33,14 +33,13 @@ class CustomTitledCheckBox extends StatelessWidget {
                   height: 13.17.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(2),
-                      border: Border.all(
-                          color: Color(AppConst.KColorBlack), width: 1.2)),
+                      border: Border.all(color: Color(AppColors.KColorBlack), width: 1.2)),
                   child: Visibility(
                     visible: value,
                     child: Center(
                       child: Icon(
                         Icons.check,
-                        color: Color(AppConst.KColorBlack),
+                        color: Color(AppColors.KColorBlack),
                         size: 13,
                       ),
                     ),
@@ -51,10 +50,7 @@ class CustomTitledCheckBox extends StatelessWidget {
                 if (title != null)
                   Text(
                     title!,
-                    style: Theme.of(Get.context!)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(fontSize: 13.sp),
+                    style: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(fontSize: 13.sp),
                   ),
               ],
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 
 class PinCodeField extends StatelessWidget {
   PinCodeField(
@@ -37,24 +37,23 @@ class PinCodeField extends StatelessWidget {
             PinCodeTextField(
               appContext: context,
               pastedTextStyle: TextStyle(
-                color: Color(AppConst.KColorPinCode),
+                color: Color(AppColors.KColorPinCode),
                 fontWeight: FontWeight.bold,
               ),
               length: 6,
               animationType: AnimationType.fade,
               pinTheme: PinTheme(
                 shape: PinCodeFieldShape.box,
-                activeColor: Color(AppConst.KColorPinCode),
+                activeColor: Color(AppColors.KColorPinCode),
                 disabledColor: Color(0xffFBF4EC),
                 borderRadius: BorderRadius.circular(5),
                 fieldHeight: 38.h,
                 fieldWidth: 38.w,
-                inactiveColor:
-                    field.hasError ? Colors.red : Color(AppConst.KColorPinCode),
-                selectedColor: Color(AppConst.KColorPinCode),
+                inactiveColor: field.hasError ? Colors.red : Color(AppColors.KColorPinCode),
+                selectedColor: Color(AppColors.KColorPinCode),
                 selectedFillColor: Colors.white,
-                inactiveFillColor: Color(AppConst.KColorPinCode),
-                activeFillColor: Color(AppConst.KColorPinCode),
+                inactiveFillColor: Color(AppColors.KColorPinCode),
+                activeFillColor: Color(AppColors.KColorPinCode),
               ),
               cursorColor: Color(0xff1BA9DF),
               animationDuration: Duration(milliseconds: 300),

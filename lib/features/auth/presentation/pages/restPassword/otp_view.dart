@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/rest_passeord_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -10,6 +10,8 @@ import 'package:thrhaly/features/auth/presentation/widgets/form_title.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/login_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/my_text_button.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/pin_code_field.dart';
+
+import '../../../../../core/routes/app_routes_management.dart';
 // import this
 
 class OtpView extends GetView {
@@ -62,18 +64,12 @@ class OtpView extends GetView {
           SpacerH17(),
           LoginButton(
             tag: "forgetPassword",
-            ButtonBackGroundColor: Color(AppConst.KColorBlue),
+            ButtonBackGroundColor: Color(AppColors.KColorBlue),
             title: "done".tr,
             onPressed: () {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                PageTransition(
-                  type: PageTransitionType.fade,
-                  duration: Duration(
-                    milliseconds: (0.5 * 1000).round(),
-                  ),
-                  child: ResetPasswordView(),
-                ),
+                RouteGenerator.ResetPassword,
               );
             },
           ),

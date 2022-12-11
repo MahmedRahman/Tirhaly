@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:thrhaly/core/fontWeight_ex.dart';
+import 'package:thrhaly/core/extensions/fontWeight_ex.dart';
 
 ThemeData mythemeData() => ThemeData(
       fontFamily: 'GE SS',

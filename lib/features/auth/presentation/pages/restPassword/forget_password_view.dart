@@ -1,11 +1,10 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
+import 'package:thrhaly/core/routes/app_routes_management.dart';
 import 'package:thrhaly/core/spacer.dart';
 import 'package:thrhaly/features/auth/presentation/pages/restPassword/otp_view.dart';
 import 'package:thrhaly/features/auth/presentation/widgets/base_auth_page.dart';
@@ -48,7 +47,7 @@ class ForgetPasswordView extends GetView {
                   tag: "pass",
                   labelText: "email".tr,
                   hintText: "enter email".tr,
-                  AssetImageIcon: AppImagePath.icon_email_svg,
+                  AssetImageIcon: AppAssets.iconSvgEmail,
                   validator: (value) {
                     if (value!.isEmpty == true || value == "") {
                       return "Required field".tr;
@@ -59,19 +58,12 @@ class ForgetPasswordView extends GetView {
                 SpacerH21(),
                 LoginButton(
                   tag: "login",
-                  ButtonBackGroundColor: Color(AppConst.KColorBlue),
+                  ButtonBackGroundColor: Color(AppColors.KColorBlue),
                   title: "send".tr,
                   onPressed: () {
-                    // _formKey.currentState!.validate();
-                    Navigator.push(
+                    Navigator.pushNamed(
                       context,
-                      PageTransition(
-                        type: PageTransitionType.fade,
-                        duration: Duration(
-                          milliseconds: (0.5 * 1000).round(),
-                        ),
-                        child: OtpView(),
-                      ),
+                      RouteGenerator.otp,
                     );
                   },
                 ),

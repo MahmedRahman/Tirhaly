@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const.dart';
-import 'package:thrhaly/core/fontWeight_ex.dart';
-import 'package:thrhaly/core/image_path.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
+import 'package:thrhaly/core/extensions/fontWeight_ex.dart';
+import 'package:thrhaly/core/const/app_assets.dart';
 
 MyTextFormField({
   required String hintText,
@@ -23,22 +23,20 @@ MyTextFormField({
           child: TextFormField(
             obscureText: obscureText,
             validator: validator,
-            cursorColor: Color(AppConst.KColorBlue),
+            cursorColor: Color(AppColors.KColorBlue),
             decoration: InputDecoration(
               labelText: labelText,
               floatingLabelStyle: TextStyle(
                 fontWeight: FontWeightEx.bold,
               ),
-              labelStyle:
-                  Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
-                        color: Color(AppConst.KColorBlack),
-                        fontWeight: FontWeightEx.medium,
-                      ),
+              labelStyle: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+                    color: Color(AppColors.KColorBlack),
+                    fontWeight: FontWeightEx.medium,
+                  ),
               hintText: hintText,
-              hintStyle:
-                  Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
-                        color: Color(AppConst.KColorBlack),
-                      ),
+              hintStyle: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
+                    color: Color(AppColors.KColorBlack),
+                  ),
               prefixIcon: SvgPicture.asset(AssetImageIcon).paddingAll(15),
               prefixIconColor: Color(0xff515151),
               border: OutlineInputBorder(
@@ -62,7 +60,7 @@ MyTextFormField({
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
                 borderSide: BorderSide(
-                  color: Color(AppConst.KColorBlue),
+                  color: Color(AppColors.KColorBlue),
                   width: .8.w,
                 ),
               ),

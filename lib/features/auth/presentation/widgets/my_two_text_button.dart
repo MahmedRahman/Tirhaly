@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 
 MyTwoTextButton({
   required void Function()? onPressed,
@@ -15,10 +15,10 @@ MyTwoTextButton({
       children: [
         Text(
           firstText,
-          style: Theme.of(Get.context!).textTheme.headlineSmall!.copyWith(
-              color: Color(AppConst.KColorBlack),
-              fontSize: 13.sp,
-              fontWeight: FontWeight.w300),
+          style: Theme.of(Get.context!)
+              .textTheme
+              .headlineSmall!
+              .copyWith(color: Color(AppColors.KColorBlack), fontSize: 13.sp, fontWeight: FontWeight.w300),
         ),
         SizedBox(
           width: 5,
@@ -28,7 +28,7 @@ MyTwoTextButton({
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w500,
-            color: Color(AppConst.KColorGreen),
+            color: Color(AppColors.KColorGreen),
           ),
         ),
       ],

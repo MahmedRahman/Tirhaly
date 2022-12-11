@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 import 'package:thrhaly/core/spacer.dart';
 
 FormTitle({
@@ -13,7 +13,7 @@ FormTitle({
           firstText,
           style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
                 color: Color(
-                  AppConst.KColorGreen,
+                  AppColors.KColorGreen,
                 ),
               ),
         ),
@@ -22,7 +22,7 @@ FormTitle({
           scandText,
           style: Theme.of(Get.context!).textTheme.headlineMedium!.copyWith(
                 color: Color(
-                  AppConst.KColorBlack,
+                  AppColors.KColorBlack,
                 ),
               ),
         )

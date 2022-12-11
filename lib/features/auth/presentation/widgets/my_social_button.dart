@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:thrhaly/core/const.dart';
+import 'package:thrhaly/core/const/app_colors.dart';
 
 MySocialButton({
   required String iconAsset,
@@ -17,7 +17,7 @@ MySocialButton({
           borderRadius: BorderRadius.circular(5.r),
           border: Border.all(
             color: Color(
-              AppConst.KColorBlue,
+              AppColors.KColorBlue,
             ),
             width: 2,
           ),
