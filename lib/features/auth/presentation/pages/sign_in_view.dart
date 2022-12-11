@@ -141,14 +141,14 @@ class SignInView extends GetView<AuthController> {
             ),
             SpacerH18(),
             MyTwoTextButton(
-              onPressed: () {
+              onSecondTextPressed: () {
                 Navigator.pushNamed(
                   context,
                   RouteGenerator.SignUp,
                 );
               },
               firstText: "Don\'t have an account?".tr,
-              scandText: "Create an account".tr,
+              secondText: "Create an account".tr,
             ),
           ],
         ),
