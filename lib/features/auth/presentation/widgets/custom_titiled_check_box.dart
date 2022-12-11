@@ -29,21 +29,21 @@ class CustomTitledCheckBox extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 13.17.w,
-                  height: 13.17.h,
+                  width: 15.w,
+                  height: 15.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(2),
                       border: Border.all(color: Color(AppColors.KColorBlack), width: 1.2)),
-                  child: Visibility(
-                    visible: value,
-                    child: Center(
+                  child: Center(
+                    child: Visibility(
+                      visible: value,
                       child: Icon(
                         Icons.check,
                         color: Color(AppColors.KColorBlack),
-                        size: 13,
+                        size: 12,
                       ),
+                      replacement: SizedBox(),
                     ),
-                    replacement: SizedBox(),
                   ),
                 ),
                 SizedBox(width: 7.w),
