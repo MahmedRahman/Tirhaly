@@ -57,7 +57,7 @@ class ForgetPasswordView extends GetView {
                 ),
                 SpacerH21(),
                 LoginButton(
-                  tag: "login",
+                  tag: "forgetPassword",
                   ButtonBackGroundColor: Color(AppColors.KColorBlue),
                   title: "send".tr,
                   onPressed: () {
